@@ -1,6 +1,4 @@
-# Book Store API GoLang
-
-Challange 8 GoLang
+"# Final Project Golang Kominfo Hacktiv8" 
 
 ## How to use
 
@@ -30,4 +28,4 @@ Challange 8 GoLang
 
 ### Delete Book: ( Delete Request )
 * `localhost:8080/books/:id`
-"# Final Project Golang Kominfo Hacktiv8" 
+
