@@ -60,7 +60,7 @@ func RegisterApi(r *gin.Engine, server handler.HttpServer) {
 	comment := r.Group("/comment") // prefix
 	{
 		comment.Use(middleware.Authentication())
-		// comment.POST("/:idPhoto", server.CreateComment)                                                 // /comment/:idPhoto
+		comment.POST("/:idPhoto", server.CreateComment)                                                 // /comment/:idPhoto
 		comment.GET("/:idPhoto", server.GetAllComment)                                                  // /comment/:idPhoto
 		comment.GET("/:idPhoto/:idComment", middleware.CommentAuthorization(), server.GetOneComment)    // /comment/:idPhoto/:idComment
 		comment.PUT("/:idPhoto/:idComment", middleware.CommentAuthorization(), server.UpdateComment)    // /comment/:idPhoto/:idComment
