@@ -1,0 +1,37 @@
+type GormModel struct {
+	ID        int        `json:"id" gorm:"primaryKey"`
+	CreatedAt *time.Time `json:"created_at"`
+	UpdatedAt *time.Time `json:"updated_at"`
+}
+
+type User struct {
+	GormModel
+	UserName string    `json:"user_name"`
+	Email    string    `json:"email"`
+	Password string    `json:"password"`
+	Age      int       `json:"age"`
+	Photos   []Photo   `json:"photos" gorm:"OnUpdate:CASCADE,OnDelete:SET NULL"`
+	Comments []Comment `json:"comments"`
+}
+
+type Photo struct {
+	GormModel
+	Title    string `json:"title"`
+	Caption  string `json:"caption"`
+	PhotoUrl string `json:"photo_url"`
+	UserID   int    `json:"user_id"`
+	User     *User
+	Comments []Comment `json:"comments"`
+}
+
+type Comment struct {
+	Message string `json:"message"`
+	Photo   *Photo
+	User    *User
+	PhotoID int `json:"photo_id"`
+	UserID  int `json:"user_id"`
+}
+
+type SocialMedia struct {
+	UserID int `json:"user_id"`
+}
