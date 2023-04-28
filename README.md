@@ -14,18 +14,6 @@
 
 ## Available Endpoints:
 
-### Get All Books: ( GET Request )
-* `localhost:8080/books`
-
-### Get single Book ( GET request )
-* `localhost:8080/books/:id`
-
-### Add New Book: ( POST Request )
-* `localhost:8080/books`
-
-### Update Book: ( PUT Request )
-* `localhost:8080/books/:id`
-
-### Delete Book: ( Delete Request )
-* `localhost:8080/books/:id`
+See all available Endpoints at after running the app
+* `http://localhost:8080/swagger/index.html/`
 
